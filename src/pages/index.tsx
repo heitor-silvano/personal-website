@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 export const Index = () => {
   return (
     <div>
       <div>Title</div>
-      <div>Hello</div>
+      <Link href="/pqp">Vá pra puta que pariu</Link>
     </div>
   );
 };
