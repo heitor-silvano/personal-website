@@ -9,9 +9,19 @@ const ArtPage = () => {
     { title: "peachy fly", image: peachy },
   ];
 
-  return artworks.map((artwork, id) => {
-    return <DraggableArtwork imageFile={artwork.image} title={artwork.title} key={id} />;
-  });
+  return (
+    <div className="relative w-screen h-screen overflow-hidden">
+      {artworks.map((artwork, id) => {
+        return (
+          <DraggableArtwork
+            imageFile={artwork.image}
+            title={artwork.title}
+            key={id}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 export default ArtPage;
