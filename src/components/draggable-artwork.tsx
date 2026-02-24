@@ -14,8 +14,8 @@ const DraggableArtwork = (props: { title: string; imageFile: string }) => {
   } | null>(null);
 
   useEffect(() => {
-    const x = Math.floor(Math.random() * (screen.width - 75));
-    const y = Math.floor(Math.random() * (screen.height - 350));
+    const x = Math.floor(Math.random() * (screen.width - 350));
+    const y = Math.floor(Math.random() * (screen.height - 600));
 
     setDefaultPosition({ x, y });
   }, []);

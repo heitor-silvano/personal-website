@@ -7,7 +7,7 @@ const BackButton = () => {
 
   if (path === "/") return false;
 
-  return <Link href="/"> {"<- Voltar"}</Link>;
+  return <Link href="/" className="p-2 hover:bg-amber-600 transition-all duration-200"> {"<- Voltar"}</Link>;
 };
 
 export default BackButton;

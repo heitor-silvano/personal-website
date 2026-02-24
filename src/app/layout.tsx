@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import BackButton from "@/components/back-button";
+import Navbar from "@/components/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,11 +28,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="bg-amber-200 flex flex-row p-4 gap-4">
-          <BackButton />
-          <div className="underline">pause break</div>
-        </div>
-        <div className="bg-gray-100 py-4">{children}</div>
+        <Navbar/>
+        <div className="bg-gray-100 pt-12">{children}</div>
       </body>
     </html>
   );
