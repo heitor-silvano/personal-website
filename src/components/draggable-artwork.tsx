@@ -3,6 +3,7 @@ import Draggable from "react-draggable";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import SidePanel from "./side-panel";
+import WindowControlButtons from "./window-control-buttons";
 
 let highestZIndex = 1;
 
@@ -51,19 +52,7 @@ const DraggableArtwork = (props: { title: string; imageFile: string }) => {
           onMouseDown={bringToFront}
           style={{ zIndex }}
         >
-          <div className="flex flex-row border-gray-300 bg-white border-b w-full justify-end p-2">
-            <div className="hover:bg-amber-600 px-2 z-10 cursor-pointer">-</div>
-            <div
-              className="hover:bg-amber-600 px-2 z-10 cursor-pointer"
-              onClick={handleOpenPanel}
-            >
-              []
-            </div>
-            <div className="hover:bg-amber-600 px-2 z-10 cursor-pointer">X</div>
-            <div className="absolute flex flex-row justify-center w-full">
-              {props.title}
-            </div>
-          </div>
+          <WindowControlButtons onClick={handleOpenPanel} title={props.title} />
 
           <Image
             src={props.imageFile}
@@ -74,7 +63,12 @@ const DraggableArtwork = (props: { title: string; imageFile: string }) => {
         </div>
       </Draggable>
 
-      <SidePanel image={props.imageFile} title={props.title} isVisible={isPanelOpen} onClose={() => setIsPanelOpen(false)}/>
+      <SidePanel
+        image={props.imageFile}
+        title={props.title}
+        isVisible={isPanelOpen}
+        onClose={() => setIsPanelOpen(false)}
+      />
     </>
   );
 };
