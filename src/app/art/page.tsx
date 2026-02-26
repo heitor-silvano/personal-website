@@ -17,13 +17,7 @@ const ArtPage = () => {
 
   return (
     <div className="relative min-h-[calc(100vh-3rem)] overflow-hidden">
-      <div className="px-4">
-        <p>
-          essa é a parte do site que eu apresento meus desenhos, pinturas entre
-          outras coisas do gênero
-        </p>
-        <p>clique nelas para mais informações</p>
-      </div>
+      <div className="px-4">galeria</div>
       {artworks.map((artwork, id) => {
         return (
           <DraggableArtwork
