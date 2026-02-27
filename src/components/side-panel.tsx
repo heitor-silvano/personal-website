@@ -1,9 +1,9 @@
-import WindowCloseIcon from "../public/window-close.svg";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 const SidePanel = (props: {
   title: string;
-  image: string;
+  image: { default: StaticImageData };
   isVisible: boolean;
   onClose: () => void;
 }) => {
@@ -12,18 +12,14 @@ const SidePanel = (props: {
   return (
     <>
       <div className="fixed inset-0 z-40" onClick={props.onClose}></div>
-      <div className="h-screen top-0 right-0 bg-white flex flex-col fixed z-50 w-200 overflow-scroll border-l-2">
-        <div className="border-b-2 w-full fixed bg-amber-200">
+      <div className="h-screen top-0 right-0 bg-white flex flex-col fixed z-50 w-200 overflow-scroll border-l-3">
+        <div className="border-b-3 w-full fixed bg-amber-200">
           <div className="flex flex-row gap-1 h-8">
             <div
-              className="p-2 hover:cursor-pointer hover:bg-amber-700"
+              className="hover:cursor-pointer hover:bg-amber-700"
               onClick={props.onClose}
             >
-              <Image
-                src={WindowCloseIcon}
-                alt="Close window"
-                className="w-4 flex flex-row"
-              ></Image>
+              <XMarkIcon className="w-8 flex flex-row items" />
             </div>
             <div className="flex flex-row items-center">
               Visualizando "{props.title}"

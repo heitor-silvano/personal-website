@@ -1,13 +1,14 @@
 "use client";
 import Draggable from "react-draggable";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useEffect, useRef, useState } from "react";
 import SidePanel from "./side-panel";
 import WindowControlButtons from "./window-control-buttons";
 
+
 let highestZIndex = 1;
 
-const DraggableArtwork = (props: { title: string; imageFile: string }) => {
+const DraggableArtwork = (props: { title: string; imageFile: {default: StaticImageData} }) => {
   const [zIndex, setZIndex] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
@@ -17,7 +18,7 @@ const DraggableArtwork = (props: { title: string; imageFile: string }) => {
   } | null>(null);
 
   useEffect(() => {
-    const x = Math.floor(Math.random() * (screen.width - 350));
+    const x = Math.floor(Math.random() * (window.innerWidth - 300));
     const y = Math.floor(Math.random() * (screen.height - 600));
 
     setDefaultPosition({ x, y });
@@ -53,7 +54,6 @@ const DraggableArtwork = (props: { title: string; imageFile: string }) => {
           style={{ zIndex }}
         >
           <WindowControlButtons onClick={handleOpenPanel} title={props.title} />
-
           <Image
             src={props.imageFile}
             draggable={false}
