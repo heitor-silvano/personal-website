@@ -1,19 +1,15 @@
 "use client";
 import DraggableArtwork from "@/components/draggable-artwork";
+import { useEffect, useState } from "react";
 
 const ArtPage = () => {
-  const joon = require("../../public/jo-on.jpg");
-  const peachy = require("../../public/peachy-fly.jpg");
-  const selfPortrait = require("../../public/self-portrait.png");
-  const sleephPhotographer = require("../../public/sleepy-photographer.png");
-  const cristalCristals = require("../../public/cristal-cristals.png");
-  const artworks = [
-    { title: "jo-on portrait", image: joon },
-    { title: "peachy fly", image: peachy },
-    { title: "self-portrait", image: selfPortrait },
-    { title: "sleepy photographer", image: sleephPhotographer },
-    { title: "cristal cristals", image: cristalCristals },
-  ];
+  const [artworks, setArtworks] = useState<any[]>([])
+
+  useEffect(() => {
+    fetch("/api/artworks")
+      .then(res => res.json())
+      .then(setArtworks)
+  }, [])
 
   return (
     <div className="relative min-h-[calc(100vh-3rem)] overflow-hidden">
