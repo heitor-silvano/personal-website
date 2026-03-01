@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import Button from "@/components/button";
+import BackButton from "@/components/back-button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,10 +30,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <div className="bg-gray-100 pt-12 h-screen">
-          {children}
+        <div className="p-8 absolute w-screen z-20">
+          <div className="border-3 p-2 pt-1 bg-amber-400 max-h-20">
+            <div className="flex flex-row gap-2">
+              <p className="font-mono font-medium text-4xl">pause break</p>
+              <BackButton />
+            </div>
+
+            <div className="p-2">
+              <div className="flex flex-row gap-2">
+                <Button text="galeria" path="art" />
+                <Button text="microblog" path="micro-blog" />
+                <Button text="vídeos" path="videos" />
+              </div>
+            </div>
+          </div>
         </div>
+        <div className="bg-gray-100 pt-25 h-screen">{children}</div>
       </body>
     </html>
   );
