@@ -7,7 +7,7 @@ export async function GET() {
   return NextResponse.json(data)
 }
 
-export async function POST(req: Request) { 
+export async function POST(req: NextRequest) { 
   const body = await req.json();
   await ArtworkService.create(body)
   return NextResponse.json({ok: true})
