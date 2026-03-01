@@ -1,5 +1,5 @@
 import { ArtworkService } from "@/app/services/artwork.service";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 
 export async function GET() {

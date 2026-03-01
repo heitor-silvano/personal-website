@@ -9,7 +9,7 @@ let highestZIndex = 1;
 
 const DraggableArtwork = (props: {
   title: string;
-  imageFile: { default: StaticImageData };
+  imageFile: string
 }) => {
   const [zIndex, setZIndex] = useState(1);
   const [isDragging, setIsDragging] = useState(false);

@@ -1,5 +1,6 @@
 import { db } from '@/app/db/client'
 import { artworks } from '../db/schema/artworks'
+import { eq } from 'drizzle-orm'
 
 export class ArtworkService {
    static async list() {
@@ -12,5 +13,13 @@ export class ArtworkService {
     description?: string
   }) {
     return db.insert(artworks).values(data)
+  }
+
+  static async update(id: number, data: {
+    title: string
+    imageUrl: string
+    description?: string
+  }){
+    return db.update(artworks).set(data).where(eq(artworks.id, id))
   }
 }
