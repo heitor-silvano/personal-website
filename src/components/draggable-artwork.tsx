@@ -10,21 +10,23 @@ let highestZIndex = 1;
 const DraggableArtwork = (props: {
   title: string;
   imageFile: string
+  type: "organized" | "messy"
 }) => {
   const [zIndex, setZIndex] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  const [defaultPosition, setDefaultPosition] = useState<{
+  const [position, setPosition] = useState<{
     x: number;
     y: number;
   } | null>(null);
 
   useEffect(() => {
-    const x = Math.floor(Math.random() * (window.innerWidth - 300));
-    const y = Math.floor(Math.random() * (screen.height - 600));
+    const isOrganized = props.type === "organized"
+    const x = isOrganized ? 0 : Math.floor(Math.random() * (window.innerWidth - 300));
+    const y = isOrganized ? 0 : Math.floor(Math.random() * (screen.height - 600));
 
-    setDefaultPosition({ x, y });
-  }, []);
+    setPosition({ x, y });
+  }, [props.type]);
 
   const bringToFront = () => {
     highestZIndex += 1;
@@ -37,13 +39,16 @@ const DraggableArtwork = (props: {
 
   const nodeReference = useRef<HTMLDivElement>(null);
 
-  if (!defaultPosition) return null;
+  if (!position) return null;
 
   return (
     <>
       <Draggable
         nodeRef={nodeReference}
-        defaultPosition={defaultPosition}
+        position={position}
+        onDrag={(_, data) => {
+          setPosition({x: data.x, y: data.y})
+        }}
         onStart={bringToFront}
         onMouseDown={() => setIsDragging(true)}
         onStop={() => setIsDragging(false)}
@@ -51,7 +56,7 @@ const DraggableArtwork = (props: {
       >
         <div
           ref={nodeReference}
-          className={`absolute inline-block max-w-75 text-center align-middle border border-gray-300 shadow-2xl ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+        className={`${props.type === "organized" ? "" : "absolute"} inline-block max-w-75 text-center align-middle outline-3 shadow-2xl ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
           onMouseDown={bringToFront}
           style={{ zIndex }}
         >

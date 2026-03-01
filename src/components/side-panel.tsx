@@ -26,7 +26,7 @@ const SidePanel = (props: {
             </div>
           </div>
         </div>
-        <Image src={props.image} alt={props.title} className="pt-8"></Image>
+        <Image src={props.image} width={200} height={200} alt={props.title} className="pt-8"></Image>
       </div>
     </>
   );
