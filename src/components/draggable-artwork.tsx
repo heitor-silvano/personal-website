@@ -5,10 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import SidePanel from "./side-panel";
 import WindowControlButtons from "./window-control-buttons";
 
-
 let highestZIndex = 1;
 
-const DraggableArtwork = (props: { title: string; imageFile: {default: StaticImageData} }) => {
+const DraggableArtwork = (props: {
+  title: string;
+  imageFile: string
+}) => {
   const [zIndex, setZIndex] = useState(1);
   const [isDragging, setIsDragging] = useState(false);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
@@ -57,6 +59,8 @@ const DraggableArtwork = (props: { title: string; imageFile: {default: StaticIma
           <Image
             src={props.imageFile}
             draggable={false}
+            width={300}
+            height={400}
             alt="artwork"
             className="w-full"
           ></Image>

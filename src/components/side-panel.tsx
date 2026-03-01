@@ -3,7 +3,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 
 const SidePanel = (props: {
   title: string;
-  image: { default: StaticImageData };
+  image: string;
   isVisible: boolean;
   onClose: () => void;
 }) => {
