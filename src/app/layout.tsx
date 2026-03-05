@@ -30,8 +30,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="p-8 absolute w-screen z-20">
-          <div className="border-3 p-2 pt-1 bg-amber-400 max-h-20">
+        <div className="p-8 absolute w-screen">
+          <div className="border-3 p-2 pt-1 bg-amber-400 max-h-20 z-20">
             <div className="flex flex-row gap-2">
               <p className="font-mono font-medium text-4xl">pause break</p>
               <BackButton />
@@ -40,8 +40,8 @@ export default function RootLayout({
             <div className="p-2">
               <div className="flex flex-row gap-2">
                 <Button text="galeria" path="art" />
-                <Button text="microblog" path="micro-blog" />
-                <Button text="vídeos" path="videos" />
+                <Button text="wip" path="micro-blog" />
+                <Button text="wip" path="videos" />
               </div>
             </div>
           </div>

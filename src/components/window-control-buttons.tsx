@@ -8,7 +8,7 @@ const WindowControlButtons = (props: {
 }) => {
   return (
     <div className="flex flex-row border-black bg-white border-b-3 w-full justify-end h-8 relative">
-      <div className="hover:bg-amber-600 px-2 z-1 cursor-pointer justify-center flex flex-row w-8 h-8">
+      <div className="hover:bg-amber-600 px-2 z-10 cursor-pointer justify-center flex flex-row w-8 h-8">
         <MinusIcon/>
       </div>
       <div

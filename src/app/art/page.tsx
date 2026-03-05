@@ -27,7 +27,7 @@ const ArtPage = () => {
   return (
     <div className="h-screen overflow-hidden pt-2.5 bg-gray-100">
       <div className="flex justify-center">
-        <div className="p-2 fixed right-0 bottom-0 z-1">
+        <div className="p-2 fixed right-0 bottom-0 z-20">
           <div
             className="p-4 mt-2 border border-dashed bg-white text-xs w-min flex flex-row text-center hover:bg-purple-300 hover:cursor-pointer"
             onClick={handleOrganization}
@@ -40,7 +40,7 @@ const ArtPage = () => {
           </div>
         </div>
       </div>
-      <div className="relative h-screen overflow-visible">
+      <div className="relative h-screen overflow-visible flex flex-row z-10">
         {artworks.map(
           (artwork, id) =>
             artwork.imageUrl && (

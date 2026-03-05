@@ -56,7 +56,7 @@ const DraggableArtwork = (props: {
       >
         <div
           ref={nodeReference}
-        className={`${props.type === "organized" ? "" : "absolute"} inline-block max-w-75 text-center align-middle outline-3 shadow-2xl ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+        className={`${props.type === "organized" ? "" : "absolute"} inline-block max-w-75 h-min text-center align-middle outline-3 shadow-2xl ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
           onMouseDown={bringToFront}
           style={{ zIndex }}
         >
