@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 const BackButton = () => {
   const path = usePathname();
 
-  if (path === "/") return false;
+  if (path === "/") return null;
 
   const router = useRouter()
 
