@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Button from "@/components/button";
 import BackButton from "@/components/back-button";
+import MainMenu from "@/components/main-menu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,13 +36,7 @@ export default function RootLayout({
               <BackButton />
             </div>
 
-            <div className="p-2">
-              <div className="flex flex-row gap-2">
-                <Button text="galeria" path="art" />
-                <Button text="wip" path="micro-blog" />
-                <Button text="wip" path="videos" />
-              </div>
-            </div>
+            <MainMenu />
           </div>
         </div>
         <div className="bg-gray-100 pt-25 h-screen">{children}</div>
