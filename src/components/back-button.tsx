@@ -6,10 +6,11 @@ import { useRouter } from "next/navigation";
 
 const BackButton = () => {
   const path = usePathname();
+  
+  const router = useRouter()
 
   if (path === "/") return null;
 
-  const router = useRouter()
 
   useEffect(() => {
     const handleEventKeyDown = (event: KeyboardEvent) => {

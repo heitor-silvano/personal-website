@@ -25,7 +25,7 @@ const ArtPage = () => {
   };
 
   return (
-    <div className="h-screen overflow-hidden pt-2.5 bg-gray-100">
+    <div className="h-[calc(100dvh-100px)] overflow-hidden pt-2.5">
       <div className="flex justify-center">
         <div className="p-2 fixed right-0 bottom-0 z-20">
           <div

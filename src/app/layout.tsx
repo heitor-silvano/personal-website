@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="p-8 absolute w-screen">
+        <div className="p-8 absolute w-full">
           <div className="border-3 p-2 pt-1 bg-amber-400 max-h-20 z-20">
             <div className="flex flex-row gap-2">
               <p className="font-mono font-medium text-4xl">pause break</p>
@@ -39,7 +39,7 @@ export default function RootLayout({
             <MainMenu />
           </div>
         </div>
-        <div className="bg-gray-100 pt-25 h-screen">{children}</div>
+        <div className="bg-linear-to-b from-[#0026ff] to-[#000e5e] pt-25 h-dvh">{children}</div>
       </body>
     </html>
   );

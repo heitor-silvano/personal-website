@@ -54,7 +54,7 @@ const LinksButton = () => {
   return (
     <>
       <div
-        className="bg-emerald-500 hover:bg-emerald-300 font-mono border-3 z-10 text-emerald-100 font-semibold border-gray-800 rounded-md hover:cursor-pointer py-2 px-4"
+        className="bg-purple-500 hover:bg-purple-300 font-mono border-3 z-20 text-gray-800 font-semibold border-gray-800 rounded-md hover:cursor-pointer py-2 px-4"
         onClick={handleOpenContextMenu}
       >
         LINKS
@@ -66,7 +66,7 @@ const LinksButton = () => {
             ? { top: mousePosition.y, left: mousePosition.x }
             : { top: 0, left: 0 }
         }
-        className={`border border-gray-200 shadow-2xl absolute z-11 ${isOpen ? "opacity-100" : "opacity-0"}`}
+        className={`border border-gray-200 shadow-2xl absolute z-21 ${isOpen ? "opacity-100" : "opacity-0"}`}
       >
         {links.map((item, index) => (
           <div
