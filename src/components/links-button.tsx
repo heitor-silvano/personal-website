@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 
 const LinksButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,11 +18,23 @@ const LinksButton = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleCloseClickingOut = () => {
-    if (!isOpen) return
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
-    setIsOpen(false);
-  };
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   const links: Array<{ url: string; title: string }> = [
     {
@@ -41,12 +54,13 @@ const LinksButton = () => {
   return (
     <>
       <div
-        className="bg-emerald-500 font-mono border-3 z-10 text-emerald-100 font-semibold border-gray-800 rounded-md hover:cursor-pointer py-2 px-4"
+        className="bg-emerald-500 hover:bg-emerald-300 font-mono border-3 z-10 text-emerald-100 font-semibold border-gray-800 rounded-md hover:cursor-pointer py-2 px-4"
         onClick={handleOpenContextMenu}
       >
         LINKS
       </div>
       <div
+        ref={menuRef}
         style={
           isOpen
             ? { top: mousePosition.y, left: mousePosition.x }
