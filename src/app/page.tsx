@@ -1,7 +1,6 @@
 "use client";
-import { Resizable } from "re-resizable";
-import Image from "next/image";
 import ResizableSection from "@/components/resizable-section";
+import Image from "next/image";
 
 export const Index = () => {
   return (
@@ -16,13 +15,34 @@ export const Index = () => {
         ]}
       />
 
-      <ResizableSection
-        title="Portfólio"
-        description={[
-          "tbd..."
-        ]}
-      />
-      
+      <ResizableSection title="Portfólio" description={["tbd..."]}>
+        <div className="p-4">
+          <div className="flex flex-col justify-center p-2 border w-fit">
+            <div className="flex flex-row gap-1 items-center pb-2">
+              <Image
+                src="/ruby.svg"
+                width={30}
+                height={30}
+                alt="Ruby programming language"
+              />
+              <p className="text-2xl font-black">simple-game-project</p>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                className="w-62.5 h-w-62.5 shrink-0 min-w-62.5 min-h-w-62.5"
+                src="/simple-game-project.png"
+                width={250}
+                height={250}
+                alt=""
+              />
+            </div>
+            <div className="text-sm pt-2">
+              <p>Jogo simples feito para rodar em terminal</p>
+              <p>repositório: </p>
+            </div>
+          </div>
+        </div>
+      </ResizableSection>
     </div>
   );
 };

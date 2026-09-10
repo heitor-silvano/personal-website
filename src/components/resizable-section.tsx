@@ -1,6 +1,7 @@
 import { Resizable } from "re-resizable";
+import { ReactNode } from "react";
 
-const ResizableSection = (props: { title: string; description: string[] }) => {
+const ResizableSection = (props: { title: string; description: string[], children?: ReactNode }) => {
   return (
     <Resizable
       defaultSize={{ width: 700, height: 110 }}
@@ -17,6 +18,7 @@ const ResizableSection = (props: { title: string; description: string[] }) => {
             return <p key={`description-${index}`}>{text}</p>;
           })}
         </div>
+        {props.children}
       </div>
     </Resizable>
   );
