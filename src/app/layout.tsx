@@ -29,19 +29,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="absolute w-full flex flex-row justify-center mt-4">
+        <div className="absolute w-full flex flex-row justify-center border-b bg-[#FFF8F4] border-gray-800">
           <div className="w-300 p-6">
             <div className="flex flex-row gap-2">
-              <p className="font-mono font-medium text-4xl">pause break</p>
+              <p className="font-mono text-4xl font-black tracking-tighter">
+                pause<span className="text-[#D97706]">/break</span>
+              </p>
               <BackButton />
             </div>
 
             <MainMenu />
           </div>
         </div>
-        <div className="bg-linear-to-b from-[#0026ff] to-[#000e5e] pt-25 h-dvh">
-          {children}
-        </div>
+        <div className="bg-[#DCD5D2] pt-25 h-dvh">{children}</div>
       </body>
     </html>
   );
