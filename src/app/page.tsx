@@ -1,5 +1,6 @@
 "use client";
 import ResizableSection from "@/components/resizable-section";
+import Section from "@/components/section";
 import Image from "next/image";
 
 export const Index = () => {
@@ -15,7 +16,7 @@ export const Index = () => {
         ]}
       />
 
-      <ResizableSection title="Portfólio" description={["tbd..."]}>
+      <Section title="Portfólio" description={["tbd..."]}>
         <div className="p-4">
           <div className="flex flex-col justify-center p-2 border w-fit">
             <div className="flex flex-row gap-1 items-center pb-2">
@@ -42,7 +43,7 @@ export const Index = () => {
             </div>
           </div>
         </div>
-      </ResizableSection>
+      </Section>
     </div>
   );
 };
