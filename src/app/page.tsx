@@ -6,7 +6,7 @@ import { portfolioData } from "./utils/portfolio";
 
 export const Index = () => {
   return (
-    <div className="w-full flex flex-col gap-4 mt-12 p-4 font-mono justify-center">
+    <div className="w-full flex flex-col gap-4 p-4 font-mono justify-center">
       <ResizableSection
         title="Sobre"
         description={[
