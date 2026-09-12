@@ -54,7 +54,7 @@ const LinksButton = () => {
   return (
     <>
       <div
-        className="bg-[#D97706] font-mono border-3 z-20 text-gray-800 border-gray-800 rounded-md hover:cursor-pointer py-2 px-4"
+        className="bg-[#D97706] font-mono z-20 text-gray-800 hover:cursor-pointer py-2 px-4"
         onClick={handleOpenContextMenu}
       >
         LINKS

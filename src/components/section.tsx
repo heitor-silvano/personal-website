@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 const Section = (props: { title: string; description: string[], children?: ReactNode }) => {
   return (
     <div
-      className="w-175 h-full flex flex-row justify-left bg-white border-gray-800 border overflow-hidden"
+      className="w-250 h-full flex flex-row justify-center bg-white border-gray-800 border overflow-hidden shadow-[2px_2px_0px_0px_#33302D]"
     >
       <div className="flex flex-col gap-4 text-left w-full">
         <div className="flex flex-row bg-[#F4ECE8]">
