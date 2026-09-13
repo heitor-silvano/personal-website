@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background h-dvh flex flex-col`}
       >
         <div className=" w-full flex flex-row border-b bg-[#FFF8F4] border-gray-800">
           <div className="p-4">
@@ -43,7 +43,7 @@ export default function RootLayout({
             <MainMenu />
           </div>
         </div>
-        <div className="bg-background h-dvh">{children}</div>
+        <div className="flex-1 min-h-0">{children}</div>
       </body>
     </html>
   );
