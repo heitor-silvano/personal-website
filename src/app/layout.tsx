@@ -4,6 +4,7 @@ import "./globals.css";
 import BackButton from "@/components/back-button";
 import MainMenu from "@/components/main-menu";
 import Header from "@/components/header";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,7 @@ export default function RootLayout({
           <div className="p-4">
             <div className="flex flex-row">
               <p className="font-mono text-4xl font-black tracking-tighter">
-                <Header/>
+                <Header />
               </p>
 
               <BackButton />
@@ -43,7 +44,9 @@ export default function RootLayout({
             <MainMenu />
           </div>
         </div>
-        <div className="flex-1 min-h-0">{children}</div>
+        <TooltipProvider>
+          <div className="flex-1 min-h-0">{children}</div>
+        </TooltipProvider>
       </body>
     </html>
   );

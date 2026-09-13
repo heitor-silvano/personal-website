@@ -1,5 +1,6 @@
 import { Resizable } from "re-resizable";
 import { ReactNode } from "react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 const ResizableSection = (props: {
   title: string;
@@ -17,9 +18,21 @@ const ResizableSection = (props: {
             {props.title}
           </p>
           <div className="pr-2">
-            <div className="w-6.25 h-6.25 bg-[#B15F00] font-mono flex justify-center text-white">
-              i
-            </div>
+            <Tooltip>
+              <TooltipTrigger
+                render={
+                  <div className="w-6.25 h-6.25 bg-[#B15F00] font-mono flex justify-center text-white hover:cursor-help">
+                    i
+                  </div>
+                }
+              />
+              <TooltipContent>
+                <p>
+                  Este é um elemento expansível, clique e arraste as pontas para
+                  expandi-lo
+                </p>
+              </TooltipContent>
+            </Tooltip>
           </div>
         </div>
         <div className="flex flex-col px-4 gap-5">
