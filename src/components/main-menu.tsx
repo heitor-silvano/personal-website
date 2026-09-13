@@ -1,16 +1,13 @@
 "use client";
-import { useState } from "react";
-import Button from "./button";
-import LinksButton from "./links-button";
+import KeyboardButton from "./keyboard-button";
 
 const MainMenu = () => {
   return (
     <div className="p-2">
       <div className="flex flex-row gap-2">
-        <Button text="galeria" path="art" />
-        <Button text="wip" path="micro-blog" />
-        <Button text="wip" path="videos" />
-        <LinksButton />
+        <KeyboardButton text="galeria" path="art" />
+        <KeyboardButton text="wip" path="micro-blog" />
+        <KeyboardButton text="wip" path="videos" />
       </div>
     </div>
   );
