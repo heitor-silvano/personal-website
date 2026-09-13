@@ -3,10 +3,17 @@ import ResizableSection from "@/components/resizable-section";
 import Section from "@/components/section";
 import Image from "next/image";
 import { portfolioData } from "./utils/portfolio";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export const Index = () => {
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="flex flex-col justify-between h-full bg-[radial-gradient(#00000020_1px,transparent_1px)] bg-size-[20px_20px]">
       <div className="flex flex-row justify-center p-4 gap-4">
         <div className="w-fit flex flex-col gap-4 font-mono justify-center">
           <ResizableSection
@@ -29,7 +36,7 @@ export const Index = () => {
               {portfolioData.map((project) => (
                 <div
                   key={`project-${project.title}`}
-                  className="group flex flex-row hover:bg-popover transition"
+                  className="group flex flex-row hover:bg-popover transition]"
                 >
                   <div className="flex flex-col justify-center p-5 border w-min">
                     <div className="flex flex-row gap-1 items-center pb-2">
@@ -37,7 +44,7 @@ export const Index = () => {
                         src={`/${project.language}.svg`}
                         width={30}
                         height={30}
-                        alt="Ruby programming language"
+                        alt={`${project.language} programming language`}
                       />
                       <p className="text-xl font-black">{project.title}</p>
                     </div>
@@ -50,10 +57,28 @@ export const Index = () => {
                         alt=""
                       />
                     </div>
-                    <div className="text-sm pt-2">
-                      <p>{project.description}</p>
-                      <p>repositório: </p>
-                      <button>teste</button>
+                    <div className="text-sm pt-2 flex flex-col">
+                      <p className="pb-2">{project.description}</p>
+                      <div className="flex flex-row items-center justify-between border-t border-dotted border-gray-400 text-gray-600 pt-4">
+                        <p>repositório: </p>
+
+                        <Dialog>
+                          <DialogTrigger>
+                            <div className="py-2 px-4 bg-[#33302D] w-fit cursor-pointer hover:bg-accent hover:rounded-2xl transition-all text-[#FFF8F4]">
+                              Detalhes
+                            </div>
+                          </DialogTrigger>
+
+                          <DialogContent>
+                            <DialogHeader className="p-2 border-b border-gray-800">
+                              <DialogTitle className="text-xl">
+                                {project.title}
+                              </DialogTitle>
+                            </DialogHeader>
+                            <div className="p-2">{project.description}</div>
+                          </DialogContent>
+                        </Dialog>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -77,9 +102,6 @@ export const Index = () => {
           <div className="flex flex-row text-xs gap-2 w-full">
             <div className="w-full px-2 hover:cursor-pointer hover:opacity-75 transition justify-center bg-accent border-gray-800 border">
               Github
-            </div>
-            <div className="w-full px-2 hover:cursor-pointer hover:opacity-75 transition justify-center bg-accent border-gray-800 border">
-              Currículo.pdf
             </div>
           </div>
         </div>

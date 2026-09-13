@@ -37,7 +37,6 @@ export default function RootLayout({
               <p className="font-mono text-4xl font-black tracking-tighter">
                 <Header />
               </p>
-
               <BackButton />
             </div>
 

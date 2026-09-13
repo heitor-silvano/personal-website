@@ -12,15 +12,15 @@ const BackButton = () => {
   if (path === "/") return null;
 
 
-  useEffect(() => {
-    const handleEventKeyDown = (event: KeyboardEvent) => {
-      if (event.code === "Escape") {
-        router.push("/")
-      }
-    };
+  // useEffect(() => {
+  //   const handleEventKeyDown = (event: KeyboardEvent) => {
+  //     if (event.code === "Escape") {
+  //       router.push("/")
+  //     }
+  //   };
 
-    document.addEventListener("keydown", handleEventKeyDown);
-  }, []);
+  //   document.addEventListener("keydown", handleEventKeyDown);
+  // }, []);
 
   return (
     <Link
