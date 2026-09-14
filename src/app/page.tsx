@@ -12,6 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Link from "next/link";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 export const Index = () => {
   return (
@@ -42,12 +43,21 @@ export const Index = () => {
                 >
                   <div className="flex flex-col justify-center p-5 border w-min">
                     <div className="flex flex-row gap-1 items-center pb-2">
-                      <Image
-                        src={`/${project.language}.svg`}
-                        width={30}
-                        height={30}
-                        alt={`${project.language} programming language`}
-                      />
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <Image
+                            src={`/${project.language}.svg`}
+                            width={30}
+                            height={30}
+                            alt={`${project.language} programming language`}
+                          />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>
+                            Escrito em {project.language}
+                          </p>
+                        </TooltipContent>
+                      </Tooltip>
                       <p className="text-xl font-black">{project.title}</p>
                     </div>
                     <div className="flex justify-center">
@@ -56,7 +66,7 @@ export const Index = () => {
                         src={project.image}
                         width={250}
                         height={250}
-                        alt=""
+                        alt={`${project.title} project image`}
                       />
                     </div>
                     <div className="text-sm pt-2 flex flex-col">
