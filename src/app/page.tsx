@@ -2,6 +2,7 @@
 import ResizableSection from "@/components/resizable-section";
 import Section from "@/components/section";
 import Image from "next/image";
+import { MoveUpRight } from "lucide-react";
 import { portfolioData } from "./utils/portfolio";
 import {
   Dialog,
@@ -10,6 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import Link from "next/link";
 
 export const Index = () => {
   return (
@@ -36,7 +38,7 @@ export const Index = () => {
               {portfolioData.map((project) => (
                 <div
                   key={`project-${project.title}`}
-                  className="group flex flex-row hover:bg-popover transition]"
+                  className="group flex flex-row hover:bg-popover transition"
                 >
                   <div className="flex flex-col justify-center p-5 border w-min">
                     <div className="flex flex-row gap-1 items-center pb-2">
@@ -100,9 +102,13 @@ export const Index = () => {
             ></Image>
           </div>
           <div className="flex flex-row text-xs gap-2 w-full">
-            <div className="w-full px-2 hover:cursor-pointer hover:opacity-75 transition justify-center bg-accent border-gray-800 border">
-              Github
-            </div>
+            <Link
+              className="w-fit text-white pl-2 hover:cursor-pointer transition justify-center bg-accent border-gray-800 border flex flex-row items-center shadow-[2px_2px_0px_0px_#33302D] hover:bg-black"
+              href="https://github.com/heitor-silvano"
+              target="_blank"
+            >
+              GitHub <MoveUpRight className="h-3.25" />
+            </Link>
           </div>
         </div>
       </div>
