@@ -12,7 +12,11 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Link from "next/link";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export const Index = () => {
   return (
@@ -53,9 +57,7 @@ export const Index = () => {
                           />
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>
-                            Escrito em {project.language}
-                          </p>
+                          <p>Escrito em {project.language}</p>
                         </TooltipContent>
                       </Tooltip>
                       <p className="text-xl font-black">{project.title}</p>
@@ -72,7 +74,18 @@ export const Index = () => {
                     <div className="text-sm pt-2 flex flex-col">
                       <p className="pb-2">{project.description}</p>
                       <div className="flex flex-row items-center justify-between border-t border-dotted border-gray-400 text-gray-600 pt-4">
-                        <p>repositório: </p>
+                        {project.isOpenSource && project.repositoryUrl && (
+                          <Link
+                            href={project.repositoryUrl}
+                            target="_blank"
+                            className="text-xs hover:border-b hover:cursor-pointer"
+                          >
+                            <div className="flex flex-row items-center">
+                              Repositório
+                              <MoveUpRight className="h-3" />
+                            </div>
+                          </Link>
+                        )}
 
                         <Dialog>
                           <DialogTrigger>
@@ -81,13 +94,45 @@ export const Index = () => {
                             </div>
                           </DialogTrigger>
 
-                          <DialogContent>
-                            <DialogHeader className="p-2 border-b border-gray-800">
+                          <DialogContent className="w-full max-w-2xl bg-white">
+                            <DialogHeader className="p-2 bg-[#F4ECE8]">
                               <DialogTitle className="text-xl">
                                 {project.title}
                               </DialogTitle>
                             </DialogHeader>
-                            <div className="p-2">{project.description}</div>
+                            <div className="flex flex-col gap-2 p-4">
+                              <div className="flex flex-row gap-2">
+                                <Image
+                                  className="w-62.5 h-w-62.5 shrink-0"
+                                  src={project.image}
+                                  width={250}
+                                  height={250}
+                                  alt={`${project.title} project image`}
+                                />
+                                <div className="px-2 whitespace-pre-line">
+                                  {project.longDescription}
+                                </div>
+                              </div>
+                              Usado no projeto:
+                              <div className="flex flex-row gap-2 items-center">
+                                {project.technologies &&
+                                  project.technologies.map((technology) => (
+                                    <Tooltip key={`technology-${technology}`}>
+                                      <TooltipTrigger>
+                                        <Image
+                                          src={`/${technology}.svg`}
+                                          alt={`${technology} logo`}
+                                          height={30}
+                                          width={30}
+                                        ></Image>
+                                      </TooltipTrigger>
+                                      <TooltipContent>
+                                        {technology}
+                                      </TooltipContent>
+                                    </Tooltip>
+                                  ))}
+                              </div>
+                            </div>
                           </DialogContent>
                         </Dialog>
                       </div>
