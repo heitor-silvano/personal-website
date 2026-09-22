@@ -108,26 +108,32 @@ export const Index = () => {
             </div>
           </Section>
         </div>
-        <div className="w-25 flex flex-col font-mono gap-2">
+        <div className="w-fit flex flex-col font-mono gap-2">
           <div className="w-45 flex flex-row justify-center bg-white border-gray-800 border overflow-hidden shadow-[2px_2px_0px_0px_#33302D]">
-            Heitor Nunes
+            Heitor Silvano
           </div>
           <div className="w-45 h-45 flex flex-row justify-center bg-white border-gray-800 border overflow-hidden shadow-[2px_2px_0px_0px_#33302D]">
             <Image
               src="/heitor.jpg"
               alt=""
-              width={250}
-              height={250}
+              width={300}
+              height={300}
               className="object-cover"
             ></Image>
           </div>
-          <div className="flex flex-row text-xs gap-2 w-full">
+          <div className="flex flex-row text-xs gap-2 w-45">
             <Link
-              className="w-fit text-white pl-2 hover:cursor-pointer transition justify-center bg-accent border-gray-800 border flex flex-row items-center shadow-[2px_2px_0px_0px_#33302D] hover:bg-black"
+              className="w-fit text-white pl-2 hover:cursor-pointer justify-center bg-accent border-gray-800 border flex flex-row items-center shadow-[2px_2px_0px_0px_#33302D] transition-all duration-150 hover:bg-black group"
               href="https://github.com/heitor-silvano"
               target="_blank"
             >
-              GitHub <MoveUpRight className="h-3.25" />
+              <p className="line-clamp-1 transition-all duration-300 flex whitespace-nowrap">
+                GitHub
+                <span className="max-w-0 overflow-hidden group-hover:max-w-30 transition-all duration-300">
+                  /heitor-silvano
+                </span>
+              </p>
+              <MoveUpRight className="h-3.25" />
             </Link>
           </div>
         </div>
