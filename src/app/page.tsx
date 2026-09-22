@@ -17,6 +17,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import ProjectModal from "@/components/project-modal";
 
 export const Index = () => {
   return (
@@ -29,6 +30,17 @@ export const Index = () => {
               "comecei a desenvolver essa belezinha aqui com a intenção de aprender mais sobre desenvolvimento web. esse site não tem pretensão de ser disruptivo ou revolucionário, é apenas um exercício de criatividade e engenharia",
               "espero que goste!",
               "dê uma volta por aí",
+              "",
+              "",
+              "...",
+              "",
+              "",
+              "...",
+              "",
+              "",
+              "...",
+              "",
+              "",
               "você está me vasculhando?",
             ]}
           />
@@ -36,14 +48,14 @@ export const Index = () => {
           <Section
             title="Portfólio"
             description={[
-              "veja meus projetos de engenharia de software abaixo",
+              "Veja meus projetos de engenharia de software abaixo:",
             ]}
           >
-            <div className="p-4 flex flex-row gap-4 items-start">
+            <div className="p-4 flex flex-row gap-4 items-start justify-center">
               {portfolioData.map((project) => (
                 <div
                   key={`project-${project.title}`}
-                  className="group flex flex-row hover:bg-popover transition"
+                  className="group flex flex-row hover:bg-popover transition shadow-md"
                 >
                   <div className="flex flex-col justify-center p-5 border w-min">
                     <div className="flex flex-row gap-1 items-center pb-2">
@@ -87,54 +99,7 @@ export const Index = () => {
                           </Link>
                         )}
 
-                        <Dialog>
-                          <DialogTrigger>
-                            <div className="py-2 px-4 bg-[#33302D] w-fit cursor-pointer hover:bg-accent hover:rounded-2xl transition-all text-[#FFF8F4]">
-                              Detalhes
-                            </div>
-                          </DialogTrigger>
-
-                          <DialogContent className="w-full max-w-2xl bg-white">
-                            <DialogHeader className="p-2 bg-[#F4ECE8]">
-                              <DialogTitle className="text-xl">
-                                {project.title}
-                              </DialogTitle>
-                            </DialogHeader>
-                            <div className="flex flex-col gap-2 p-4">
-                              <div className="flex flex-row gap-2">
-                                <Image
-                                  className="w-62.5 h-w-62.5 shrink-0"
-                                  src={project.image}
-                                  width={250}
-                                  height={250}
-                                  alt={`${project.title} project image`}
-                                />
-                                <div className="px-2 whitespace-pre-line">
-                                  {project.longDescription}
-                                </div>
-                              </div>
-                              Usado no projeto:
-                              <div className="flex flex-row gap-2 items-center">
-                                {project.technologies &&
-                                  project.technologies.map((technology) => (
-                                    <Tooltip key={`technology-${technology}`}>
-                                      <TooltipTrigger>
-                                        <Image
-                                          src={`/${technology}.svg`}
-                                          alt={`${technology} logo`}
-                                          height={30}
-                                          width={30}
-                                        ></Image>
-                                      </TooltipTrigger>
-                                      <TooltipContent>
-                                        {technology}
-                                      </TooltipContent>
-                                    </Tooltip>
-                                  ))}
-                              </div>
-                            </div>
-                          </DialogContent>
-                        </Dialog>
+                        <ProjectModal {...project} />
                       </div>
                     </div>
                   </div>
