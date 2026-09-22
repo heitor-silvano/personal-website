@@ -11,13 +11,8 @@ import Link from "next/link";
 import { IPortfolioData } from "@/app/utils/portfolio";
 
 const ProjectModal = (project: IPortfolioData) => {
-  const {
-    title,
-    url,
-    longDescription,
-    technologies,
-    image,
-  } = project;
+  const { title, url, longDescription, technologies, image, repositoryUrl } =
+    project;
 
   return (
     <Dialog>
@@ -40,9 +35,18 @@ const ProjectModal = (project: IPortfolioData) => {
               height={250}
               alt={`${title} project image`}
             />
-            <div className="flex flex-col px-2 whitespace-pre-line justify-between">
+            <div className="flex flex-col px-2 whitespace-pre-line justify-between w-full">
               <div className="border-b pb-2">{longDescription}</div>
-              <div>
+              <div className="flex gap-2">
+                {repositoryUrl && (
+                  <Link
+                    href={repositoryUrl}
+                    target="_blank"
+                    className="flex w-fit px-2 py-1 hover:bg-accent bg-black transition text-white"
+                  >
+                    Repositório
+                  </Link>
+                )}
                 {url && (
                   <Link
                     href={url}

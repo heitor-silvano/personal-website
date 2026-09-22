@@ -51,13 +51,13 @@ export const Index = () => {
               "Veja meus projetos de engenharia de software abaixo:",
             ]}
           >
-            <div className="p-4 flex flex-row gap-4 items-start justify-center">
+            <div className="p-4 grid grid-cols-3 w-fit gap-4 items-start justify-center">
               {portfolioData.map((project) => (
                 <div
                   key={`project-${project.title}`}
                   className="group flex flex-row hover:bg-popover transition shadow-md"
                 >
-                  <div className="flex flex-col justify-center p-5 border w-min">
+                  <div className="flex flex-col justify-center p-5 border w-max">
                     <div className="flex flex-row gap-1 items-center pb-2">
                       <Tooltip>
                         <TooltipTrigger>

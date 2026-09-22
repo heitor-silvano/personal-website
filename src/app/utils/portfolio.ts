@@ -13,6 +13,16 @@ export type IPortfolioData = {
 }
 
 export const portfolioData: IPortfolioData[] = [{
+  title: "leads-enrichment",
+  repositoryUrl: "github.com/heitor-silvano/leads-enrichment-and-management",
+  description: "Gestão de leads, enriquecimento e classificação por IA",
+  longDescription: `Sistema de gestão de leads com enriquecimento de dados e classificação por IA.\n\nUtilizei Ollama para a LLM e gerei uma Mock API para os testes com leads falsos.\n\nToda a aplicação está dockerizada.`,
+  technologies: ["typescript", "nest", "vitest"],
+  image: "/leads-enrichment.png",
+  language: "typescript",
+  isOpenSource: true
+},
+{
   title: "iceberg-as-code",
   url: "https://iceberg-as-code.vercel.app",
   repositoryUrl: "https://github.com/heitor-silvano/iceberg-as-code",
@@ -23,6 +33,13 @@ export const portfolioData: IPortfolioData[] = [{
   language: "typescript",
   isOpenSource: true
 }, {
+  title: "pista-nossa",
+  description: "Backend do aplicativo que criei com um amigo",
+  technologies: ["typescript", "nest", "prisma"],
+  image: "/simple-tickets-application.png",
+  language: "typescript",
+  isOpenSource: false
+}, {
   title: "simple-game-project",
   repositoryUrl: "https://github.com/heitor-silvano/SimpleGameExperiment",
   description: "Jogo simples feito para rodar em terminal",
@@ -30,12 +47,5 @@ export const portfolioData: IPortfolioData[] = [{
   image: "/simple-game-project.png",
   language: "ruby",
   isOpenSource: true
-}, {
-  title: "pista-nossa",
-  description: "Backend do aplicativo que criei com um amigo",
-  technologies: ["typescript", "nest", "prisma"],
-  image: "/simple-tickets-application.png",
-  language: "typescript",
-  isOpenSource: false
-},
+}
 ]
