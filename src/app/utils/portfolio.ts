@@ -14,7 +14,7 @@ export type IPortfolioData = {
 
 export const portfolioData: IPortfolioData[] = [{
   title: "leads-enrichment",
-  repositoryUrl: "github.com/heitor-silvano/leads-enrichment-and-management",
+  repositoryUrl: "https://github.com/heitor-silvano/leads-enrichment-and-management",
   description: "Gestão de leads, enriquecimento e classificação por IA",
   longDescription: `Sistema de gestão de leads com enriquecimento de dados e classificação por IA.\n\nUtilizei Ollama para a LLM e gerei uma Mock API para os testes com leads falsos.\n\nToda a aplicação está dockerizada.`,
   technologies: ["typescript", "nest", "vitest"],
