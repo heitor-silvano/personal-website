@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Mozilla_Text } from "next/font/google";
 import "./globals.css";
 import BackButton from "@/components/back-button";
 import MainMenu from "@/components/main-menu";
 import Header from "@/components/header";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const mozillaText = Mozilla_Text({
+  variable: "--font-mozilla-text",
   subsets: ["latin"],
-});
+  display: "swap",
+  adjustFontFallback: false
+})
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -29,12 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background h-dvh flex flex-col`}
+        className={`${mozillaText.className} ${geistMono.variable} antialiased bg-background h-dvh flex flex-col`}
       >
         <div className=" w-full flex flex-row border-b bg-[#FFF8F4] border-gray-800">
           <div className="p-4">
             <div className="flex flex-row">
-              <p className="font-mono text-4xl font-black tracking-tighter">
+              <p className="text-4xl font-black tracking-tighter">
                 <Header />
               </p>
               <BackButton />

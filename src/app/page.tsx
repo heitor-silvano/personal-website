@@ -4,13 +4,6 @@ import Section from "@/components/section";
 import Image from "next/image";
 import { MoveUpRight } from "lucide-react";
 import { portfolioData } from "./utils/portfolio";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import Link from "next/link";
 import {
   Tooltip,
@@ -23,13 +16,13 @@ export const Index = () => {
   return (
     <div className="flex flex-col justify-between h-full bg-[radial-gradient(#00000020_1px,transparent_1px)] bg-size-[20px_20px]">
       <div className="flex flex-row justify-center p-4 gap-4">
-        <div className="w-fit flex flex-col gap-4 font-mono justify-center">
+        <div className="w-fit flex flex-col gap-4 justify-center">
           <ResizableSection
             title="Sobre o site"
             description={[
-              "comecei a desenvolver essa belezinha aqui com a intenção de aprender mais sobre desenvolvimento web. esse site não tem pretensão de ser disruptivo ou revolucionário, é apenas um exercício de criatividade e engenharia",
+              "comecei a desenvolver essa belezinha aqui com a intenção de aprender mais sobre desenvolvimento web. esse site não tem pretensão de ser disruptivo ou revolucionário, é apenas um exercício de criatividade e engenharia.",
               "espero que goste!",
-              "dê uma volta por aí",
+              "dê uma volta por aí...",
               "",
               "",
               "...",
@@ -46,7 +39,7 @@ export const Index = () => {
           />
 
           <Section
-            title="Portfólio"
+            title="Portfólio técnico"
             description={[
               "Veja meus projetos de engenharia de software abaixo:",
             ]}
