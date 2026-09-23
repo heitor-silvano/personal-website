@@ -20,9 +20,9 @@ export const Index = () => {
           <ResizableSection
             title="Sobre o site"
             description={[
-              "comecei a desenvolver essa belezinha aqui com a intenção de aprender mais sobre desenvolvimento web. esse site não tem pretensão de ser disruptivo ou revolucionário, é apenas um exercício de criatividade e engenharia.",
-              "espero que goste!",
-              "dê uma volta por aí...",
+              "Comecei a desenvolver essa belezinha aqui com a intenção de aprender mais sobre desenvolvimento web. esse site não tem pretensão de ser disruptivo ou revolucionário, é apenas um exercício de criatividade e engenharia.",
+              "Espero que goste!",
+              "Dê uma volta por aí...",
               "",
               "",
               "...",
@@ -34,7 +34,18 @@ export const Index = () => {
               "...",
               "",
               "",
-              "você está me vasculhando?",
+              "Você está me vasculhando?",
+            ]}
+          />
+
+          <ResizableSection
+            title="Sobre mim"
+            description={[
+              "Sou o Heitor, esse cara da foto à direita. Sou formado em ciências da computação pela Anhembi Morumbi e atuo como engenheiro de software web pleno.",
+              "Gosto do que faço profissionalmente, mas também tenho alguns outros hobbies, como arte digital, música, vídeogames e outras coisas.",
+              "Vou tentar elencar tudo que faço aqui nesse site. O objetivo dele não é apenas ser um portfólio técnico (apesar de ser o foco, já que ele está na página inicial), mas sim um compilado de tudo que faço: meu personal home page (significado original do PHP).",
+              "Pretendo codar este projeto 100% manualmente, sem usar AI para gerar o código. Não que eu seja contra AI em programação, mas sim por que quero sentir que construí artesanalmente.",
+              "Em alguns de meus projetos vocês encontrarão código gerado por AI. Não é necessariamente um problema.",
             ]}
           />
 

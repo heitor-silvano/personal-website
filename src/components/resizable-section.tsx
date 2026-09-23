@@ -61,7 +61,7 @@ const ResizableSection = (props: {
             <Tooltip>
               <TooltipTrigger
                 render={
-                  <div className="w-6.25 h-6.25 bg-[#B15F00] font-mono flex justify-center text-white hover:cursor-help">
+                  <div className="w-6.25 h-6.25 bg-[#B15F00] font-mono flex justify-center text-white hover:cursor-help italic">
                     i
                   </div>
                 }
