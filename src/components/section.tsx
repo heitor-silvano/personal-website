@@ -16,7 +16,7 @@ const Section = (props: {
             {props.title}
           </p>
           <div className="flex gap-2 items-center pr-2 text-white">
-            <div title="Visualização em lista">
+            {/* <div title="Visualização em lista">
               <Rows3
                 strokeWidth={1.25}
                 nonScalingStroke={true}
@@ -31,7 +31,7 @@ const Section = (props: {
                 onClick={() => setIsGridView(true)}
                 className={`bg-[#B15F00] p-1 w-7 h-7 hover:cursor-pointer ${isGridView && "shadow-[inset_0_-3px_0_0_#e3aa68]" }`}
               />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="flex flex-col px-4 gap-5">
