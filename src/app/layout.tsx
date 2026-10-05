@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Mozilla_Text } from "next/font/google";
 import "./globals.css";
-import BackButton from "@/components/back-button";
 import MainMenu from "@/components/main-menu";
 import Header from "@/components/header";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import SourcecodeButton from "@/components/sourcecode-button";
 
 const mozillaText = Mozilla_Text({
   variable: "--font-mozilla-text",
   subsets: ["latin"],
   display: "swap",
-  adjustFontFallback: false
-})
-
+  adjustFontFallback: false,
+});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -35,15 +34,19 @@ export default function RootLayout({
         className={`${mozillaText.className} ${geistMono.variable} antialiased bg-background h-dvh flex flex-col`}
       >
         <div className=" w-full flex flex-row border-b bg-[#FFF8F4] border-gray-800">
-          <div className="p-4">
-            <div className="flex flex-row">
+          <div className="p-4 flex w-full items-center">
+            <div className="flex flex-row w-full justify-between">
               <p className="text-4xl font-black tracking-tighter">
                 <Header />
               </p>
-              <BackButton />
+            </div>
+            <div>
+              <SourcecodeButton />
             </div>
 
-            <MainMenu />
+            <div className="absolute flex justify-center w-full pointer-events-none">
+              <MainMenu />
+            </div>
           </div>
         </div>
         <TooltipProvider>
