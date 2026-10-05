@@ -6,6 +6,7 @@ const SourcecodeButton = () => {
     <Link
       href={"https://github.com/heitor-silvano/personal-website"}
       target="_blank"
+      title="Ver código fonte no Github"
       className="flex items-center bg-black text-white px-4 py-2 gap-2 hover:cursor-pointer hover:bg-white hover:text-black hover:ring transition-all group"
     >
       Código
